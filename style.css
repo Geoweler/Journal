@@ -1,0 +1,494 @@
+/* ============================================
+   journal.geoweler.com — thème repris d'iJulien
+   (Blogger Dynamic Views, vue "sidebar")
+   ============================================ */
+
+:root {
+  --content-width: 960px;
+  --sidebar-width: 310px;
+  --body-bg: #EEEEEE;
+  --header-bg: #F3F3F3;
+  --primary: #333333;
+  --text-color: #333333;
+  --blog-title-color: #555555;
+  --link-color: #009EB8;
+  --link-hover: #007a8f;
+  --ribbon-color: #666666;
+  --ribbon-hover: #AD3A2B;
+  --card-bg: #ffffff;
+  --font-main: 'Helvetica Neue Light', HelveticaNeue-Light, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--body-bg);
+  color: var(--text-color);
+  font-family: var(--font-main);
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+a {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--link-hover);
+  text-decoration: underline;
+}
+
+/* ---------- Dynamic Views style switcher bar ---------- */
+
+.view-switcher {
+  background: #fafafa;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 10px 0;
+}
+
+.view-switcher-inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.view-switcher button {
+  background: none;
+  border: 1px solid transparent;
+  padding: 6px 14px;
+  font-family: var(--font-main);
+  font-size: 13px;
+  color: #777;
+  cursor: pointer;
+  border-radius: 3px;
+  letter-spacing: 0.02em;
+}
+
+.view-switcher button:hover {
+  background: #eee;
+  color: #333;
+}
+
+.view-switcher button.active {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ---------- Year section headers ---------- */
+
+.year-section {
+  margin-bottom: 36px;
+}
+
+.year-heading {
+  font-size: 32px;
+  font-weight: 300;
+  color: #c9c9c9;
+  margin: 0 0 18px;
+  padding-bottom: 8px;
+  border-bottom: 2px solid #e2e2e2;
+  letter-spacing: 0.02em;
+}
+
+/* ---------- Magazine mode ---------- */
+
+.magazine-item {
+  display: flex;
+  gap: 22px;
+  background: var(--card-bg);
+  border: 1px solid #e2e2e2;
+  margin-bottom: 16px;
+  overflow: hidden;
+}
+
+.magazine-thumb {
+  width: 220px;
+  min-height: 150px;
+  flex-shrink: 0;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.magazine-thumb.no-image {
+  background: linear-gradient(135deg, #e8e8e8, #f5f5f5);
+}
+
+.magazine-thumb.no-image .year-stamp {
+  font-size: 30px;
+  font-weight: 300;
+  color: #c0c0c0;
+  letter-spacing: 0.03em;
+}
+
+.magazine-body {
+  flex: 1;
+  padding: 18px 22px 18px 0;
+  min-width: 0;
+}
+
+.magazine-body .post-title {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.magazine-body .post-meta {
+  margin-bottom: 10px;
+}
+
+.magazine-body .post-excerpt {
+  font-size: 14px;
+  -webkit-line-clamp: 3;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (max-width: 600px) {
+  .magazine-item {
+    flex-direction: column;
+  }
+  .magazine-thumb {
+    width: 100%;
+    height: 140px;
+  }
+  .magazine-body {
+    padding: 14px 18px;
+  }
+}
+
+/* ---------- List mode (simple) ---------- */
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 12px 0;
+  border-bottom: 1px solid #e8e8e8;
+  gap: 16px;
+}
+
+.list-item .list-title {
+  font-size: 16px;
+  flex: 1;
+  min-width: 0;
+}
+
+.list-item .list-date {
+  font-size: 13px;
+  color: #999;
+  white-space: nowrap;
+}
+
+/* ---------- view containers ---------- */
+
+.view-container {
+  display: none;
+}
+
+.view-container.active {
+  display: block;
+}
+
+/* ---------- Header bar ---------- */
+
+.topbar {
+  background: var(--primary);
+  color: #fff;
+  padding: 14px 0;
+}
+
+.topbar-inner {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.topbar a {
+  color: #fff;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+
+.topbar .site-name {
+  font-weight: 400;
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+/* ---------- Blog header ---------- */
+
+.blog-header {
+  background: var(--header-bg);
+  padding: 50px 20px 36px;
+  text-align: center;
+}
+
+.blog-header h1 {
+  margin: 0;
+  font-family: var(--font-main);
+  font-weight: 300;
+  font-size: 42px;
+  color: var(--blog-title-color);
+  letter-spacing: 0.01em;
+}
+
+.blog-header h1 a {
+  color: var(--blog-title-color);
+}
+
+.blog-header h1 a:hover {
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.blog-header .description {
+  margin-top: 10px;
+  font-size: 16px;
+  font-style: italic;
+  color: var(--blog-title-color);
+  opacity: 0.85;
+}
+
+/* ---------- Layout ---------- */
+
+.content-outer {
+  max-width: var(--content-width);
+  margin: 0 auto;
+  padding: 36px 20px 60px;
+}
+
+.columns {
+  display: flex;
+  gap: 36px;
+  align-items: flex-start;
+}
+
+.main-column {
+  flex: 1;
+  min-width: 0;
+}
+
+.sidebar-column {
+  width: var(--sidebar-width);
+  flex-shrink: 0;
+}
+
+@media (max-width: 760px) {
+  .columns {
+    flex-direction: column;
+  }
+  .sidebar-column {
+    width: 100%;
+  }
+  .blog-header h1 {
+    font-size: 32px;
+  }
+}
+
+/* ---------- Date ribbon (signature Dynamic Views) ---------- */
+
+.date-outer {
+  margin-bottom: 30px;
+}
+
+.date-header {
+  background: var(--ribbon-color);
+  color: #fff;
+  display: inline-block;
+  padding: 6px 16px;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  border-radius: 2px;
+}
+
+/* ---------- Post card ---------- */
+
+.post {
+  background: var(--card-bg);
+  padding: 28px 32px;
+  margin-bottom: 22px;
+  border: 1px solid #e2e2e2;
+}
+
+.post-title {
+  margin: 0 0 6px;
+  font-size: 26px;
+  font-weight: 300;
+  line-height: 1.25;
+}
+
+.post-title a {
+  color: var(--primary);
+}
+
+.post-meta {
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 18px;
+}
+
+.post-meta .written-date {
+  color: #aa5a3b;
+}
+
+.post-content {
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.post-content p, .post-content div {
+  margin: 0 0 1em;
+}
+
+.post-content img {
+  max-width: 100%;
+  height: auto;
+}
+
+.post-excerpt {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444;
+}
+
+.post-excerpt p {
+  margin: 0 0 0.8em;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.post-source-tag {
+  display: inline-block;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #999;
+  border: 1px solid #ddd;
+  padding: 2px 8px;
+  border-radius: 10px;
+  margin-left: 8px;
+}
+
+/* ---------- Single post page ---------- */
+
+.single-post .post {
+  margin-bottom: 0;
+}
+
+.back-link {
+  display: inline-block;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+.post-categories {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid #eee;
+  font-size: 13px;
+}
+
+.post-categories a {
+  display: inline-block;
+  margin-right: 8px;
+  color: #777;
+  background: #f4f4f4;
+  padding: 3px 10px;
+  border-radius: 10px;
+}
+
+.post-categories a:hover {
+  text-decoration: none;
+  background: #e8e8e8;
+}
+
+/* ---------- Comments (Giscus) ---------- */
+
+.comments-section {
+  margin-top: 36px;
+  padding-top: 28px;
+  border-top: 1px solid #e2e2e2;
+}
+
+/* ---------- Sidebar widgets ---------- */
+
+.widget {
+  background: var(--card-bg);
+  border: 1px solid #e2e2e2;
+  padding: 22px;
+  margin-bottom: 22px;
+}
+
+.widget h2 {
+  margin: 0 0 14px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #777;
+}
+
+.widget-profile-photo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: #ddd;
+  margin-bottom: 12px;
+}
+
+.widget p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.widget ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.widget li {
+  margin-bottom: 8px;
+  font-size: 14px;
+}
+
+/* ---------- Pagination ---------- */
+
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  font-size: 14px;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  text-align: center;
+  padding: 30px 20px;
+  font-size: 13px;
+  color: #999;
+}
