@@ -23,9 +23,12 @@
   <div class="view-switcher-inner">
     <button class="active" data-view="magazine" onclick="switchView('magazine')">Magazine</button>
     <button data-view="list" onclick="switchView('list')">Liste</button>
+    <span class="view-switcher-spacer"></span>
+    <button onclick="openModal('modal-julien')">Julien</button>
+    <button onclick="openModal('modal-liens')">Liens</button>
   </div>
 </div>
-<div class="content-outer"><div class="columns"><main class="main-column"><div class="view-container active" data-view="magazine"><a class="magazine-item featured" href="posts/arrachedisconnected.html">
+<div class="content-outer"><main class="main-column"><div class="view-container active" data-view="magazine"><a class="magazine-item featured" href="posts/arrachedisconnected.html">
   <div class="mag-header">
     <div class="mag-date-badge"><span class="mag-month">JUIN</span><span class="mag-day">25</span></div>
     <h2 class="mag-title">Arraché/disconnected</h2>
@@ -982,23 +985,27 @@
   <a class="list-title" href="posts/premier-article.html">Premier article</a>
   <span class="list-date">10 janvier 2008</span>
 </div>
-</div></div></main><aside class="sidebar-column">
-  <div class="widget">
+</div></div></main></div><footer class="site-footer">
+  <p>journal.geoweler.com — articles migrés depuis iJulien (Blogger) et Geoweler (WordPress)</p>
+</footer>
+<div class="modal-overlay" id="modal-julien" onclick="if(event.target===this) closeModal('modal-julien')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-julien')">&times;</button>
     <div class="widget-profile-photo"></div>
     <h2>Julien</h2>
     <p id="profile-description">Julien, joaillier-fondeur à Toulouse. Danseur swing &amp; blues. J'écris ici depuis 2008&nbsp;— d'abord sur Blogger, puis sur WordPress, maintenant ici.</p>
   </div>
-  <div class="widget">
+</div>
+<div class="modal-overlay" id="modal-liens" onclick="if(event.target===this) closeModal('modal-liens')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-liens')">&times;</button>
     <h2>Liens</h2>
     <ul id="profile-links">
       <li><a href="https://swingjulep.geoweler.com" target="_blank" rel="noopener">SwingJulep</a></li>
       <li><a href="https://geoweler.com" target="_blank" rel="noopener">geoweler.com</a></li>
     </ul>
   </div>
-</aside>
-</div></div><footer class="site-footer">
-  <p>journal.geoweler.com — articles migrés depuis iJulien (Blogger) et Geoweler (WordPress)</p>
-</footer>
+</div>
 <script>
 function switchView(view) {
   document.querySelectorAll('.view-container').forEach(function(el) {
@@ -1039,4 +1046,13 @@ function switchView(view) {
   });
 })();
 </script>
-</body></html>
+<script>
+function openModal(id) {
+  var el = document.getElementById(id);
+  if (el) el.classList.add('active');
+}
+function closeModal(id) {
+  var el = document.getElementById(id);
+  if (el) el.classList.remove('active');
+}
+</script></body></html>

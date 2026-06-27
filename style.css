@@ -345,32 +345,101 @@ a:hover {
   padding: 36px 20px 60px;
 }
 
-.columns {
-  display: flex;
-  gap: 36px;
-  align-items: flex-start;
-}
-
 .main-column {
-  flex: 1;
+  width: 100%;
   min-width: 0;
 }
 
-.sidebar-column {
-  width: var(--sidebar-width);
-  flex-shrink: 0;
-}
-
 @media (max-width: 760px) {
-  .columns {
-    flex-direction: column;
-  }
-  .sidebar-column {
-    width: 100%;
-  }
   .blog-header h1 {
     font-size: 32px;
   }
+}
+
+/* ---------- View switcher extras ---------- */
+
+.view-switcher-spacer {
+  flex: 1;
+}
+
+.back-to-home {
+  font-size: 13px;
+  color: #777;
+  padding: 6px 10px;
+}
+
+.back-to-home:hover {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+/* ---------- Modals (Julien / Liens) ---------- */
+
+.modal-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  z-index: 1000;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.modal-overlay.active {
+  display: flex;
+}
+
+.modal-box {
+  position: relative;
+  background: var(--card-bg);
+  max-width: 420px;
+  width: 100%;
+  padding: 32px 28px;
+  border-radius: 4px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+}
+
+.modal-close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 26px;
+  line-height: 1;
+  color: #999;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  color: #333;
+}
+
+.modal-box h2 {
+  margin: 0 0 14px;
+  font-size: 15px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #777;
+}
+
+.modal-box p {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #555;
+}
+
+.modal-box ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.modal-box li {
+  margin-bottom: 10px;
+  font-size: 15px;
 }
 
 /* ---------- Date ribbon (signature Dynamic Views) ---------- */
