@@ -19,7 +19,15 @@
     </div>
   </div>
 </header>
-<div class="content-outer"><div class="columns"><main class="main-column single-post"><a class="back-link" href="../index.html">← Tous les articles</a><article class="post">
+<div class="view-switcher">
+  <div class="view-switcher-inner">
+    <a href="../index.html" class="back-to-home">← iJulien</a>
+    <span class="view-switcher-spacer"></span>
+    <button onclick="openModal('modal-julien')">Julien</button>
+    <button onclick="openModal('modal-liens')">Liens</button>
+  </div>
+</div>
+<div class="content-outer"><main class="main-column single-post"><a class="back-link" href="../index.html">← Tous les articles</a><article class="post">
   <h1 class="post-title">Premier bain de l'année!</h1>
   <div class="post-meta"><span>10 février 2008</span></div>
   <div class="post-content"><p class="mobile-photo"><a href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjmeuMafu5-q4dERkLpyWLrzeTyqsAtqCrzXFcr5wWv-Th2jeQLnesvA3K8AAzHkbIyDUjdTAhSf07pA2KqqXiFJPYzHpexscv3SVaJlXFiAQ1BKR8LtfpxG8Ock1Sk4WPALLhayCxMLQ0/s1600-h/DSC00076-763922.jpeg"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjmeuMafu5-q4dERkLpyWLrzeTyqsAtqCrzXFcr5wWv-Th2jeQLnesvA3K8AAzHkbIyDUjdTAhSf07pA2KqqXiFJPYzHpexscv3SVaJlXFiAQ1BKR8LtfpxG8Ock1Sk4WPALLhayCxMLQ0/s320/DSC00076-763922.jpeg"  border="0" alt="" id="BLOGGER_PHOTO_ID_5165311341907363890" /></a></p>Premier bain de l&#39;ann&#233;e! &#192; 9h ce matin. L&#39;eau &#224; 13 degr&#233;s, tr&#232;s vivifiant! Apr&#232;s avoir nag&#233; un ptit peu on est trop bien! En plus un temps magnifique et un coin paradisiaque! Apr&#232;s on est all&#233; boire un caf&#233; en terrasse au soleil avec croissants etc Et on a pris les v&#233;lo pour retourner au vieux port. J&#39;ai h&#226;te de recommencer dimanche prochain! ;)</div>
@@ -41,21 +49,34 @@
         async>
   </script>
 </div>
-</main><aside class="sidebar-column">
-  <div class="widget">
+</main></div><footer class="site-footer">
+  <p>journal.geoweler.com — articles migrés depuis iJulien (Blogger) et Geoweler (WordPress)</p>
+</footer>
+<div class="modal-overlay" id="modal-julien" onclick="if(event.target===this) closeModal('modal-julien')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-julien')">&times;</button>
     <div class="widget-profile-photo"></div>
-    <h2>Qui êtes-vous&nbsp;?</h2>
-    <p>Julien, joaillier-fondeur à Toulouse. Danseur swing &amp; blues. J'écris ici depuis 2008&nbsp;— d'abord sur Blogger, puis sur WordPress, maintenant ici.</p>
+    <h2>Julien</h2>
+    <p id="profile-description">Julien, joaillier-fondeur à Toulouse. Danseur swing &amp; blues. J'écris ici depuis 2008&nbsp;— d'abord sur Blogger, puis sur WordPress, maintenant ici.</p>
   </div>
-  <div class="widget">
-    <h2>Mes liens</h2>
-    <ul>
+</div>
+<div class="modal-overlay" id="modal-liens" onclick="if(event.target===this) closeModal('modal-liens')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-liens')">&times;</button>
+    <h2>Liens</h2>
+    <ul id="profile-links">
       <li><a target="_blank" href="https://swingjulep.geoweler.com" target="_blank" rel="noopener">SwingJulep</a></li>
       <li><a href="https://geoweler.com" target="_blank" rel="noopener">geoweler.com</a></li>
     </ul>
   </div>
-</aside>
-</div></div><footer class="site-footer">
-  <p>journal.geoweler.com — articles migrés depuis iJulien (Blogger) et Geoweler (WordPress)</p>
-</footer>
-</body></html>
+</div>
+<script>
+function openModal(id) {
+  var el = document.getElementById(id);
+  if (el) el.classList.add('active');
+}
+function closeModal(id) {
+  var el = document.getElementById(id);
+  if (el) el.classList.remove('active');
+}
+</script></body></html>

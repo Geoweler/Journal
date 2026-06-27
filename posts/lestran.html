@@ -19,7 +19,15 @@
     </div>
   </div>
 </header>
-<div class="content-outer"><div class="columns"><main class="main-column single-post"><a class="back-link" href="../index.html">← Tous les articles</a><article class="post">
+<div class="view-switcher">
+  <div class="view-switcher-inner">
+    <a href="../index.html" class="back-to-home">← iJulien</a>
+    <span class="view-switcher-spacer"></span>
+    <button onclick="openModal('modal-julien')">Julien</button>
+    <button onclick="openModal('modal-liens')">Liens</button>
+  </div>
+</div>
+<div class="content-outer"><main class="main-column single-post"><a class="back-link" href="../index.html">← Tous les articles</a><article class="post">
   <h1 class="post-title">l'estran</h1>
   <div class="post-meta"><span>13 août 2009</span></div>
   <div class="post-content"><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh58Fq7NqaLXR4PDQ-_vDOoFqt9O2SajvTt4DJSxNL17YgMv46lqi4T4x1wN8k_Sb6epHfdEl271xeDoRD129CLiaK6T29iuc4ePf4FXd6ZzQrjl5SvsP7IE80sC9oZRwIFg4lE1veuWaM/s1600-h/p12-10-2008045.JPG.jpeg"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 320px; height: 240px;" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh58Fq7NqaLXR4PDQ-_vDOoFqt9O2SajvTt4DJSxNL17YgMv46lqi4T4x1wN8k_Sb6epHfdEl271xeDoRD129CLiaK6T29iuc4ePf4FXd6ZzQrjl5SvsP7IE80sC9oZRwIFg4lE1veuWaM/s320/p12-10-2008045.JPG.jpeg" border="0" alt="" id="BLOGGER_PHOTO_ID_5369398194890043874" /></a><br /><span class="Apple-style-span"   style="  color: rgb(51, 51, 51); line-height: 14px; font-family:'lucida grande', tahoma, verdana, arial, sans-serif;font-size:11px;">j'me rappelle avec les copains, on longeait les falaises jusqu'à un chemin qui menait à un petit village au bord de la mer. On passait derrière les blockhaus. D'antiques sentinelles accrochées au bord du vide qui attendent que l'érosion de la falaise les libèrent. Trente mètres de chute pour finir rongé par la mer!<br />On arrivait sur une petite plage de galets nichée entre deux immenses falaises. La plage de Puys. Il y avait une digue plongeant dans l'eau laiteuse couleur jade sur laquelle on s'installait à marée haute. Et on sautait comme des fous dans cette eau agitée et froide. Inconscient du danger, on jouait à cache-cache dans les grottes creusées par la mer au pied des falaises. A marée basse on allait se poser près d'un petit cabanon. Sur l'estran il y avait un banc de sable entre les rochers couverts d'algues. On s'amusait comme des enfants. On collectionnait les coquillages encore vivants, les bouts de verre usés par le va et vient des galets. On attrapait les poissons et les crustacés piégés dans les flaques. Autant de trésors que de marques de pieds d'enfants dans le sable mouillé. Effacées par la mer mais gravées à jamais dans mon âme d'enfant de la mer.<br /><br />Julien<br /><br /><a href="http://fr.wikipedia.org/wiki/Estran" onmousedown="UntrustedLink.bootstrap($(this), &quot;6477880fc03d3619fbac7edc8135f104&quot;, event)" target="_blank" rel="nofollow" style="cursor: pointer; color: rgb(59, 89, 152); text-decoration: none; "><span>http://fr.wikipedia.org/wi</span><wbr><span class="word_break" style="display: block; float: left; margin-left: -10px; padding-top: 0px; padding-right: 0px; padding-bottom: 0px; padding-left: 0px; "></span>ki/Estran</a></span></div>
@@ -41,21 +49,34 @@
         async>
   </script>
 </div>
-</main><aside class="sidebar-column">
-  <div class="widget">
+</main></div><footer class="site-footer">
+  <p>journal.geoweler.com — articles migrés depuis iJulien (Blogger) et Geoweler (WordPress)</p>
+</footer>
+<div class="modal-overlay" id="modal-julien" onclick="if(event.target===this) closeModal('modal-julien')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-julien')">&times;</button>
     <div class="widget-profile-photo"></div>
-    <h2>Qui êtes-vous&nbsp;?</h2>
-    <p>Julien, joaillier-fondeur à Toulouse. Danseur swing &amp; blues. J'écris ici depuis 2008&nbsp;— d'abord sur Blogger, puis sur WordPress, maintenant ici.</p>
+    <h2>Julien</h2>
+    <p id="profile-description">Julien, joaillier-fondeur à Toulouse. Danseur swing &amp; blues. J'écris ici depuis 2008&nbsp;— d'abord sur Blogger, puis sur WordPress, maintenant ici.</p>
   </div>
-  <div class="widget">
-    <h2>Mes liens</h2>
-    <ul>
+</div>
+<div class="modal-overlay" id="modal-liens" onclick="if(event.target===this) closeModal('modal-liens')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-liens')">&times;</button>
+    <h2>Liens</h2>
+    <ul id="profile-links">
       <li><a target="_blank" href="https://swingjulep.geoweler.com" target="_blank" rel="noopener">SwingJulep</a></li>
       <li><a href="https://geoweler.com" target="_blank" rel="noopener">geoweler.com</a></li>
     </ul>
   </div>
-</aside>
-</div></div><footer class="site-footer">
-  <p>journal.geoweler.com — articles migrés depuis iJulien (Blogger) et Geoweler (WordPress)</p>
-</footer>
-</body></html>
+</div>
+<script>
+function openModal(id) {
+  var el = document.getElementById(id);
+  if (el) el.classList.add('active');
+}
+function closeModal(id) {
+  var el = document.getElementById(id);
+  if (el) el.classList.remove('active');
+}
+</script></body></html>

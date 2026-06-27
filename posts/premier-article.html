@@ -19,7 +19,15 @@
     </div>
   </div>
 </header>
-<div class="content-outer"><div class="columns"><main class="main-column single-post"><a class="back-link" href="../index.html">← Tous les articles</a><article class="post">
+<div class="view-switcher">
+  <div class="view-switcher-inner">
+    <a href="../index.html" class="back-to-home">← iJulien</a>
+    <span class="view-switcher-spacer"></span>
+    <button onclick="openModal('modal-julien')">Julien</button>
+    <button onclick="openModal('modal-liens')">Liens</button>
+  </div>
+</div>
+<div class="content-outer"><main class="main-column single-post"><a class="back-link" href="../index.html">← Tous les articles</a><article class="post">
   <h1 class="post-title">Premier article</h1>
   <div class="post-meta"><span>10 janvier 2008</span></div>
   <div class="post-content"><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgW-k9ztPcM2aJpcnpTonz3Hvkn8eutcgEleCV5QPVad4eoQw2gFC3cTIrY0RNk4RpMsubYv04qor1OIauPrlx6wz_Hq56-s4r87t5JGOXpBZktPrtCRzM8GIRYVSXyUJwTxnDp0dAcBjY/s1600-h/ju-joncs.jpg"><img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgW-k9ztPcM2aJpcnpTonz3Hvkn8eutcgEleCV5QPVad4eoQw2gFC3cTIrY0RNk4RpMsubYv04qor1OIauPrlx6wz_Hq56-s4r87t5JGOXpBZktPrtCRzM8GIRYVSXyUJwTxnDp0dAcBjY/s200/ju-joncs.jpg" border="0" alt="" id="BLOGGER_PHOTO_ID_5153902109156829602" /></a><br /><div align="right"><span><span>Hello, bienvenue chez moi.<br />Je m'appelle Julien (ça vous vous en doutiez).<br />Je me suis un peu éparpillé sur la toile et j'ai décidé de me concentrer ici. Vu la quantité d'infos à rassembler ça risque de prendre du temps (ou pas). J'espère que vous viendrez me voir souvent ici et que vous me laisserez des commentaires!</span></span><div align="right"><span></span></div></div></div>
@@ -41,21 +49,34 @@
         async>
   </script>
 </div>
-</main><aside class="sidebar-column">
-  <div class="widget">
+</main></div><footer class="site-footer">
+  <p>journal.geoweler.com — articles migrés depuis iJulien (Blogger) et Geoweler (WordPress)</p>
+</footer>
+<div class="modal-overlay" id="modal-julien" onclick="if(event.target===this) closeModal('modal-julien')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-julien')">&times;</button>
     <div class="widget-profile-photo"></div>
-    <h2>Qui êtes-vous&nbsp;?</h2>
-    <p>Julien, joaillier-fondeur à Toulouse. Danseur swing &amp; blues. J'écris ici depuis 2008&nbsp;— d'abord sur Blogger, puis sur WordPress, maintenant ici.</p>
+    <h2>Julien</h2>
+    <p id="profile-description">Julien, joaillier-fondeur à Toulouse. Danseur swing &amp; blues. J'écris ici depuis 2008&nbsp;— d'abord sur Blogger, puis sur WordPress, maintenant ici.</p>
   </div>
-  <div class="widget">
-    <h2>Mes liens</h2>
-    <ul>
+</div>
+<div class="modal-overlay" id="modal-liens" onclick="if(event.target===this) closeModal('modal-liens')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-liens')">&times;</button>
+    <h2>Liens</h2>
+    <ul id="profile-links">
       <li><a target="_blank" href="https://swingjulep.geoweler.com" target="_blank" rel="noopener">SwingJulep</a></li>
       <li><a href="https://geoweler.com" target="_blank" rel="noopener">geoweler.com</a></li>
     </ul>
   </div>
-</aside>
-</div></div><footer class="site-footer">
-  <p>journal.geoweler.com — articles migrés depuis iJulien (Blogger) et Geoweler (WordPress)</p>
-</footer>
-</body></html>
+</div>
+<script>
+function openModal(id) {
+  var el = document.getElementById(id);
+  if (el) el.classList.add('active');
+}
+function closeModal(id) {
+  var el = document.getElementById(id);
+  if (el) el.classList.remove('active');
+}
+</script></body></html>

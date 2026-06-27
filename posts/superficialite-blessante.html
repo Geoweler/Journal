@@ -19,7 +19,15 @@
     </div>
   </div>
 </header>
-<div class="content-outer"><div class="columns"><main class="main-column single-post"><a class="back-link" href="../index.html">← Tous les articles</a><article class="post">
+<div class="view-switcher">
+  <div class="view-switcher-inner">
+    <a href="../index.html" class="back-to-home">← iJulien</a>
+    <span class="view-switcher-spacer"></span>
+    <button onclick="openModal('modal-julien')">Julien</button>
+    <button onclick="openModal('modal-liens')">Liens</button>
+  </div>
+</div>
+<div class="content-outer"><main class="main-column single-post"><a class="back-link" href="../index.html">← Tous les articles</a><article class="post">
   <h1 class="post-title">Superficialité blessante...</h1>
   <div class="post-meta"><span>12 septembre 2009</span></div>
   <div class="post-content">Je me souviens j'écrivais souvent. Je savais qu'ils passeraient voir mon blog. J'écrivais et ils me disaient, ils commentaient. Souvent ils me touchaient. Chaque jour j'espérais avoir des nouvelles. Chaque jour j'allais lire leurs peines et leurs coups de gueule. J'écrivais ce que je ressentais ou ce que je voyais. Aujourd'hui mes textes sont dispersés. Comme autant d'échos sur la toile. Je n'ai plus aucun espace intime et personnel comme j'avais avant. Avec les mêmes personnes qui passaient le pas de la porte. Et qui s'installaient sur les coussins pour discuter. Aujourd'hui j'ai des curieux, qui lisent sans savoir. Qui passent sans regarder vraiment. Qui ne ressentent pas l'envie de laisser une trace. Qui ne se sentent pas concerné. Malheureusement c'est un constat que j'ai fait partout où je suis allé. Les gens deviennent aveugles et sourds. Ils sont conditionnés par leurs habitudes. Peut-être que Facebook n'est pas un lieu pour s'exprimer. Mais un lieu pour faire bonne figure. Un lieu de façade, une vitrine. D'ailleurs le nom facebook décrit bien l'esprit de cette communauté. C'est une couverture de livre. Comme celles qu'on regarde quand on va dans les magasins. On regarde vaguement les titres des bouquins et les images en passant, comme ça sans y penser. Il n'y a donc aucun intérêt à écrire quelque chose ici. Orange blog me manque bcp. Je cherche une communauté où je pourrais m'exprimer et être entendu. Si vous en connaissez une dites-le moi.</div>
@@ -41,21 +49,34 @@
         async>
   </script>
 </div>
-</main><aside class="sidebar-column">
-  <div class="widget">
+</main></div><footer class="site-footer">
+  <p>journal.geoweler.com — articles migrés depuis iJulien (Blogger) et Geoweler (WordPress)</p>
+</footer>
+<div class="modal-overlay" id="modal-julien" onclick="if(event.target===this) closeModal('modal-julien')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-julien')">&times;</button>
     <div class="widget-profile-photo"></div>
-    <h2>Qui êtes-vous&nbsp;?</h2>
-    <p>Julien, joaillier-fondeur à Toulouse. Danseur swing &amp; blues. J'écris ici depuis 2008&nbsp;— d'abord sur Blogger, puis sur WordPress, maintenant ici.</p>
+    <h2>Julien</h2>
+    <p id="profile-description">Julien, joaillier-fondeur à Toulouse. Danseur swing &amp; blues. J'écris ici depuis 2008&nbsp;— d'abord sur Blogger, puis sur WordPress, maintenant ici.</p>
   </div>
-  <div class="widget">
-    <h2>Mes liens</h2>
-    <ul>
+</div>
+<div class="modal-overlay" id="modal-liens" onclick="if(event.target===this) closeModal('modal-liens')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-liens')">&times;</button>
+    <h2>Liens</h2>
+    <ul id="profile-links">
       <li><a target="_blank" href="https://swingjulep.geoweler.com" target="_blank" rel="noopener">SwingJulep</a></li>
       <li><a href="https://geoweler.com" target="_blank" rel="noopener">geoweler.com</a></li>
     </ul>
   </div>
-</aside>
-</div></div><footer class="site-footer">
-  <p>journal.geoweler.com — articles migrés depuis iJulien (Blogger) et Geoweler (WordPress)</p>
-</footer>
-</body></html>
+</div>
+<script>
+function openModal(id) {
+  var el = document.getElementById(id);
+  if (el) el.classList.add('active');
+}
+function closeModal(id) {
+  var el = document.getElementById(id);
+  if (el) el.classList.remove('active');
+}
+</script></body></html>

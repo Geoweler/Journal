@@ -19,7 +19,15 @@
     </div>
   </div>
 </header>
-<div class="content-outer"><div class="columns"><main class="main-column single-post"><a class="back-link" href="../index.html">← Tous les articles</a><article class="post">
+<div class="view-switcher">
+  <div class="view-switcher-inner">
+    <a href="../index.html" class="back-to-home">← iJulien</a>
+    <span class="view-switcher-spacer"></span>
+    <button onclick="openModal('modal-julien')">Julien</button>
+    <button onclick="openModal('modal-liens')">Liens</button>
+  </div>
+</div>
+<div class="content-outer"><main class="main-column single-post"><a class="back-link" href="../index.html">← Tous les articles</a><article class="post">
   <h1 class="post-title">Sur le (à) vif</h1>
   <div class="post-meta"><span>27 novembre 2008</span></div>
   <div class="post-content">Le pire des regrets c'est celui d'avoir aimé. Je regrette d'avoir donné autant. Donner sans attendre en retour c'est beau, c'est bien mais c'est pas bon. A force de se contenter de maigres retours on se sent vidé. Lassé d'être un garçon que tous le monde aime seulement parce que je suis gentil. Lassé d'être enfermé dans ma carapace d'apparence zen et joviale. Lassé de garder enfermé mes douleurs et mes émotions. Mais trop couillon pour pouvoir m'affirmer. Je ne sais même pas quoi faire. Tout ce que je sais faire c'est raconter des histoires. Taper des textes qui n'intéressent personne. Que personne ne remarque. Et qui ne font réagir personne. Tous le monde s'en fout du moment que ça vient pas troubler leur conscience et leur petite vie. Alors je vous emmerde tous. Si j'écris ici c'est pour moi. Restez dans votre confort personnel. Dans votre petit monde virtuel. Sachez que rien ne dure éternellement. Et que tout n'est pas aussi bien qu'on le croît.</div>
@@ -41,21 +49,34 @@
         async>
   </script>
 </div>
-</main><aside class="sidebar-column">
-  <div class="widget">
+</main></div><footer class="site-footer">
+  <p>journal.geoweler.com — articles migrés depuis iJulien (Blogger) et Geoweler (WordPress)</p>
+</footer>
+<div class="modal-overlay" id="modal-julien" onclick="if(event.target===this) closeModal('modal-julien')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-julien')">&times;</button>
     <div class="widget-profile-photo"></div>
-    <h2>Qui êtes-vous&nbsp;?</h2>
-    <p>Julien, joaillier-fondeur à Toulouse. Danseur swing &amp; blues. J'écris ici depuis 2008&nbsp;— d'abord sur Blogger, puis sur WordPress, maintenant ici.</p>
+    <h2>Julien</h2>
+    <p id="profile-description">Julien, joaillier-fondeur à Toulouse. Danseur swing &amp; blues. J'écris ici depuis 2008&nbsp;— d'abord sur Blogger, puis sur WordPress, maintenant ici.</p>
   </div>
-  <div class="widget">
-    <h2>Mes liens</h2>
-    <ul>
+</div>
+<div class="modal-overlay" id="modal-liens" onclick="if(event.target===this) closeModal('modal-liens')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-liens')">&times;</button>
+    <h2>Liens</h2>
+    <ul id="profile-links">
       <li><a target="_blank" href="https://swingjulep.geoweler.com" target="_blank" rel="noopener">SwingJulep</a></li>
       <li><a href="https://geoweler.com" target="_blank" rel="noopener">geoweler.com</a></li>
     </ul>
   </div>
-</aside>
-</div></div><footer class="site-footer">
-  <p>journal.geoweler.com — articles migrés depuis iJulien (Blogger) et Geoweler (WordPress)</p>
-</footer>
-</body></html>
+</div>
+<script>
+function openModal(id) {
+  var el = document.getElementById(id);
+  if (el) el.classList.add('active');
+}
+function closeModal(id) {
+  var el = document.getElementById(id);
+  if (el) el.classList.remove('active');
+}
+</script></body></html>

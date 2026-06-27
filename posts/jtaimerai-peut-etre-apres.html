@@ -19,7 +19,15 @@
     </div>
   </div>
 </header>
-<div class="content-outer"><div class="columns"><main class="main-column single-post"><a class="back-link" href="../index.html">← Tous les articles</a><article class="post">
+<div class="view-switcher">
+  <div class="view-switcher-inner">
+    <a href="../index.html" class="back-to-home">← iJulien</a>
+    <span class="view-switcher-spacer"></span>
+    <button onclick="openModal('modal-julien')">Julien</button>
+    <button onclick="openModal('modal-liens')">Liens</button>
+  </div>
+</div>
+<div class="content-outer"><main class="main-column single-post"><a class="back-link" href="../index.html">← Tous les articles</a><article class="post">
   <h1 class="post-title">J't'aimerai, peut-être, après.</h1>
   <div class="post-meta"><span>16 juin 2009</span></div>
   <div class="post-content"><a onblur="try {parent.deselectBloggerImageGracefully();} catch(e) {}" href="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjohwF0zCCod9aj-oLl0Mf2gA6v2zvOpxLk9NAg58Oh2GAyyOreuGHFgeo4cYu8lGpwRSfNNnC197iiz6VxrksOwEaVo6I3cHQjG1U6P69mUfdhCfMYr2gFoR_tVSNTNcXg3aRNJzRyRxw/s1600-h/IMG_7455.jpg"><img style="display:block; margin:0px auto 10px; text-align:center;cursor:pointer; cursor:hand;width: 320px; height: 320px;" src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjohwF0zCCod9aj-oLl0Mf2gA6v2zvOpxLk9NAg58Oh2GAyyOreuGHFgeo4cYu8lGpwRSfNNnC197iiz6VxrksOwEaVo6I3cHQjG1U6P69mUfdhCfMYr2gFoR_tVSNTNcXg3aRNJzRyRxw/s320/IMG_7455.jpg" border="0" alt=""id="BLOGGER_PHOTO_ID_5347936400365651410" /></a><br /><br />Le coeur déchiré en mille paillettes.<br />Eparpillé sur des chemins, perdu.<br />J’ai tant désiré que tout s’arrête.<br />M’faire enlever par un inconnu.<br /><br />Les pieds lancés à corps et âme<br />Je marche sans but en plein vacarme<br />Je vis mes accords et mes charmes<br />Avec ma flûte, l’entrain me gagne.<br /><br />je t’aimerai, peut-être, après<br />maintenant je t’aime sans y penser.<br /><br />Je sens les coups, les vibrations.<br />Me détourner comme dans un rêve.<br />J’ai perdu ma destination<br />Mais j’voudrai un jour dire je t’aime.<br /><br />Marchons ensemble sur les chemins<br />j’ai peur d’aimer et d’avancer.<br />On se ressemble, prend moi la main<br />j’veux pas m’blesser et t’épargner.<br /><br />je t’aimerai, peut-être, après<br />maintenant je t’aime sans y penser.</div>
@@ -41,21 +49,34 @@
         async>
   </script>
 </div>
-</main><aside class="sidebar-column">
-  <div class="widget">
+</main></div><footer class="site-footer">
+  <p>journal.geoweler.com — articles migrés depuis iJulien (Blogger) et Geoweler (WordPress)</p>
+</footer>
+<div class="modal-overlay" id="modal-julien" onclick="if(event.target===this) closeModal('modal-julien')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-julien')">&times;</button>
     <div class="widget-profile-photo"></div>
-    <h2>Qui êtes-vous&nbsp;?</h2>
-    <p>Julien, joaillier-fondeur à Toulouse. Danseur swing &amp; blues. J'écris ici depuis 2008&nbsp;— d'abord sur Blogger, puis sur WordPress, maintenant ici.</p>
+    <h2>Julien</h2>
+    <p id="profile-description">Julien, joaillier-fondeur à Toulouse. Danseur swing &amp; blues. J'écris ici depuis 2008&nbsp;— d'abord sur Blogger, puis sur WordPress, maintenant ici.</p>
   </div>
-  <div class="widget">
-    <h2>Mes liens</h2>
-    <ul>
+</div>
+<div class="modal-overlay" id="modal-liens" onclick="if(event.target===this) closeModal('modal-liens')">
+  <div class="modal-box">
+    <button class="modal-close" onclick="closeModal('modal-liens')">&times;</button>
+    <h2>Liens</h2>
+    <ul id="profile-links">
       <li><a target="_blank" href="https://swingjulep.geoweler.com" target="_blank" rel="noopener">SwingJulep</a></li>
       <li><a href="https://geoweler.com" target="_blank" rel="noopener">geoweler.com</a></li>
     </ul>
   </div>
-</aside>
-</div></div><footer class="site-footer">
-  <p>journal.geoweler.com — articles migrés depuis iJulien (Blogger) et Geoweler (WordPress)</p>
-</footer>
-</body></html>
+</div>
+<script>
+function openModal(id) {
+  var el = document.getElementById(id);
+  if (el) el.classList.add('active');
+}
+function closeModal(id) {
+  var el = document.getElementById(id);
+  if (el) el.classList.remove('active');
+}
+</script></body></html>
